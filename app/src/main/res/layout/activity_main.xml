@@ -17,7 +17,8 @@
         android:src="@drawable/homepage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="logotop"/>
 
     <ImageView
         android:id="@+id/bottomimage"
@@ -29,6 +30,7 @@
         android:src="@drawable/recify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:transitionName="logobottom"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

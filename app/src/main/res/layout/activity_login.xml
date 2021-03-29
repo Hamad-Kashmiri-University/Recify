@@ -13,18 +13,20 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="108dp"
-        android:src="@drawable/homepagenobg" />
+        android:src="@drawable/homepagenobg"
+        android:transitionName="logotop"/>
 
     <TextView
         android:id="@+id/largeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif"
-        android:text="YOUR RECIPES ARE WAITING"
+        android:fontFamily="@font/dancing_script_bold"
+        android:text="Your Recipes Are Waiting"
         android:textAlignment="center"
         android:textColor="#35455D"
-        android:textSize="40sp" />
+        android:textSize="40sp"
+        android:transitionName="logobottom" />
 
     <TextView
         android:id="@+id/signinText"
