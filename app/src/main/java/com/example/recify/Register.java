@@ -44,7 +44,17 @@ public class Register extends AppCompatActivity {
                 db = FirebaseDatabase.getInstance();
                 ref = db.getReference("/users");
 
-                ref.setValue("test");
+                // retrieve form values
+                String name = formName.getEditText().getText().toString();
+                String username = formUsername.getEditText().getText().toString();
+                String email = formEmail.getEditText().getText().toString();
+                String password = formPassword.getEditText().getText().toString();
+
+                UserHelper User = new UserHelper(name, username, email, password);
+
+                //unique identifier for new users
+                ref.child(name).setValue(User);
+
 
 
             }
