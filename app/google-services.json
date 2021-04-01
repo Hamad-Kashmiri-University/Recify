@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "578479940662",
+    "project_id": "recify-8d225",
+    "storage_bucket": "recify-8d225.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578479940662:android:c680bc0161993d3fe22497",
+        "android_client_info": {
+          "package_name": "com.example.recify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578479940662-88sh54e13hd26qs7rpg5tce11qdlvt5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAfuUz_vA0M1iHRVJLG8lKV9jmh8piHTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578479940662-88sh54e13hd26qs7rpg5tce11qdlvt5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

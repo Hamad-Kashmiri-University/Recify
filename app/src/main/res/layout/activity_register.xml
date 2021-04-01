@@ -56,11 +56,11 @@
             android:fontFamily="serif">
 
             <com.google.android.material.textfield.TextInputEditText
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:inputType="text">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,12 +75,12 @@
             android:transitionName="user">
 
             <com.google.android.material.textfield.TextInputEditText
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:inputType="text"
-                android:fontFamily="serif">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:fontFamily="serif"
+                android:inputType="text"></com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,12 +92,12 @@
             android:hint="Email">
 
             <com.google.android.material.textfield.TextInputEditText
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:inputType="textEmailAddress"
-                android:fontFamily="serif">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:fontFamily="serif"
+                android:inputType="textEmailAddress"></com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -111,16 +111,17 @@
             android:transitionName="pass">
 
             <com.google.android.material.textfield.TextInputEditText
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:inputType="textPassword"
-                android:fontFamily="serif">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:fontFamily="serif"
+                android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/formSubmit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -130,11 +131,11 @@
             android:fontFamily="sans-serif-medium"
             android:text="SUBMIT"
             android:textColor="@color/white"
-            app:backgroundTint="#35455D"
             android:transitionName="submit"
-            ></Button>
+            app:backgroundTint="#35455D"></Button>
 
         <Button
+            android:id="@+id/formLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
