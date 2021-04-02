@@ -129,6 +129,7 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/custom_button"
             android:fontFamily="sans-serif-medium"
+            android:onClick="register"
             android:text="SUBMIT"
             android:textColor="@color/white"
             android:transitionName="submit"
