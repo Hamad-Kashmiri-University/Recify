@@ -16,30 +16,30 @@
 
         <ImageView
             android:id="@+id/profileImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/profile"></ImageView>
 
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/profileImage"
             android:fontFamily="@font/dancing_script_bold"
             android:text="Hamad Kashmiri"
             android:textColor="#fff"
-            android:textSize="30sp"></TextView>
+            android:textSize="36sp"></TextView>
 
         <TextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
             android:layout_toRightOf="@+id/profileImage"
             android:fontFamily="@font/dancing_script"
             android:text="Username"
@@ -70,9 +70,9 @@
 
             <ImageView
                 android:id="@+id/icon1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/upload"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"></ImageView>
 
@@ -85,7 +85,8 @@
                 android:layout_below="@+id/icon1"
                 android:id="@+id/card1"
                 android:layout_centerHorizontal="true"
-                android:textColor="#35455d"></TextView>
+                android:textColor="#35455d"
+                android:layout_marginTop="-10dp"></TextView>
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -105,22 +106,23 @@
 
             <ImageView
                 android:id="@+id/icon2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/profile"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/recipe"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View Recipes"
+                android:text="My Recipes"
                 android:fontFamily="@font/dancing_script"
                 android:textSize="28sp"
                 android:layout_below="@+id/icon2"
                 android:id="@+id/card2"
                 android:layout_centerHorizontal="true"
-                android:textColor="#35455d"></TextView>
+                android:textColor="#35455d"
+                android:layout_marginTop="-10dp"></TextView>
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -150,9 +152,9 @@
 
                 <ImageView
                     android:id="@+id/icon3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/location"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"></ImageView>
 
@@ -165,7 +167,8 @@
                     android:layout_below="@+id/icon3"
                     android:id="@+id/card3"
                     android:layout_centerHorizontal="true"
-                    android:textColor="#35455d"></TextView>
+                    android:textColor="#35455d"
+                    android:layout_marginTop="-10dp"></TextView>
             </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -185,23 +188,23 @@
 
                 <ImageView
                     android:id="@+id/icon4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/fridge"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Our Recipes"
+                    android:text="Recify Recipes"
                     android:fontFamily="@font/dancing_script"
                     android:textSize="28sp"
                     android:layout_below="@+id/icon4"
                     android:id="@+id/card4"
                     android:layout_centerHorizontal="true"
                     android:textAlignment="center"
-
+                    android:layout_marginTop="-10dp"
                     android:textColor="#35455d"></TextView>
             </RelativeLayout>
 
@@ -234,7 +237,7 @@
                     android:id="@+id/icon5"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/profile"
+                    android:src="@drawable/ar"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"></ImageView>
 
@@ -267,11 +270,11 @@
 
                 <ImageView
                     android:id="@+id/icon6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/profile"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/settings"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"></ImageView>
+                    android:layout_marginTop="25dp"></ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -279,10 +282,12 @@
                     android:text="Settings"
                     android:fontFamily="@font/dancing_script"
                     android:textSize="28sp"
-                    android:layout_below="@+id/icon6"
+                    android:layout_alignParentBottom="true"
                     android:id="@+id/card6"
                     android:layout_centerHorizontal="true"
-                    android:textColor="#35455d"></TextView>
+                    android:textColor="#35455d"
+                    android:layout_marginBottom="20dp"
+                    ></TextView>
             </RelativeLayout>
 
         </com.google.android.material.card.MaterialCardView>
