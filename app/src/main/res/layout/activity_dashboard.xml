@@ -62,7 +62,8 @@
         android:layout_margin="10dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
-        app:cardBackgroundColor="#fff">
+        app:cardBackgroundColor="#fff"
+        android:id="@+id/cardOne">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -92,6 +93,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTwo"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_weight="1"
@@ -138,6 +140,7 @@
         android:layout_marginTop="-30dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardThree"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_weight="1"
@@ -174,6 +177,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFour"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_weight="1"
@@ -221,6 +225,7 @@
         android:layout_marginTop="-30dp">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFive"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_weight="1"
@@ -256,6 +261,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSix"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_weight="1"

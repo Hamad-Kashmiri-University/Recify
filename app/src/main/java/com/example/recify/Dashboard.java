@@ -5,7 +5,13 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.card.MaterialCardView;
+
 public class Dashboard extends AppCompatActivity {
+
+    //vars
+
+    MaterialCardView uploadCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
