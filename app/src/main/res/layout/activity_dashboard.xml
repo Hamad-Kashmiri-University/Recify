@@ -38,14 +38,14 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
             android:layout_centerInParent="true"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@+id/profileImage"
             android:fontFamily="@font/dancing_script"
-            android:text="Username"
+            android:text="Welcome to your Dashboard"
             android:textColor="#a9a9a9"
-            android:textSize="18sp"
-            android:layout_below="@+id/name"></TextView>
+            android:textSize="18sp"></TextView>
 
     </RelativeLayout>
 
