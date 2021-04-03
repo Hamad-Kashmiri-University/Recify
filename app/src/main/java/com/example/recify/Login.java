@@ -38,8 +38,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // hooks
 
+        // hooks
         register = findViewById(R.id.registerButton);
         logo = findViewById(R.id.logo);
         logotext = findViewById(R.id.logotext);
@@ -110,6 +110,8 @@ public class Login extends AppCompatActivity {
     private void userExists(){
         final String usernameInput = username.getEditText().getText().toString().trim();
         final String passwordInput = password.getEditText().getText().toString().trim();
+        //loader
+        final Loader loader = new Loader(Login.this);
         //db ref
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("/users");
         //query to check pass for username entered
@@ -143,6 +145,7 @@ public class Login extends AppCompatActivity {
                         Log.d("check", "dbpass " + dbPassword + snapshot.hasChild("users") + snapshot.hasChild(usernameInput));
 
                         if(dbPassword.equals(passwordInput)){
+                            loader.loadStart();
                             //remove errors is equals
                             username.setError(null);
                             username.setErrorEnabled(false);
