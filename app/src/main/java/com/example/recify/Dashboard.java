@@ -22,6 +22,17 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+
+        //hooks
+        uploadCard = findViewById(R.id.cardOne);
+        uploadCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), UploadRecipe.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
