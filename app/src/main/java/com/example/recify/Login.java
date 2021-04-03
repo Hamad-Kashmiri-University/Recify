@@ -60,4 +60,41 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+    private boolean usernameValidate() {
+        String input = username.getEditText().getText().toString();
+        if (input.isEmpty()) {
+            username.setError("Please enter a username");
+            return false;
+        }
+        else if(input.length() >= 12) {
+            username.setError("Username must be 12 or fewer characters");
+            return false;
+        }
+        else {
+            username.setError(null);
+            username.setErrorEnabled(false);
+            return true;
+        }
+    };
+
+    private boolean passwordValidate() {
+        String input = password.getEditText().getText().toString();
+
+        if (input.isEmpty()) {
+            password.setError("Please enter a password");
+            return false;
+        }
+        else {
+            password.setError(null);
+            return true;
+        }
+    };
+
+
+    public void login(View v){
+        //check validation
+        if (!usernameValidate() | !passwordValidate()){
+            return;
+        }
+    }
 }

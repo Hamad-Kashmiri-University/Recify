@@ -1,6 +1,9 @@
 package com.example.recify;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -34,6 +37,25 @@ public class Register extends AppCompatActivity {
         formEmail = findViewById(R.id.email);
         formSubmit = findViewById(R.id.formSubmit);
         formLogin = findViewById(R.id.formLogin);
+
+        formLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, Login.class);
+                //transition inspired by coding with tea
+                Pair[] pairs = new Pair[4];
+                pairs[0] = new Pair<View,String>(formUsername,"user");
+                pairs[1] = new Pair<View,String>(formPassword,"pass");
+                pairs[2] = new Pair<View,String>(formSubmit,"submit");
+                pairs[3] = new Pair<View,String>(formLogin,"bottomtext");
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(Register.this,pairs);
+                    startActivity(intent, options.toBundle());
+                }
+
+            }
+        });
 
 
     }
