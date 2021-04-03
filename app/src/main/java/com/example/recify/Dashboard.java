@@ -13,8 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Dashboard extends AppCompatActivity {
 
     //vars
-
-    MaterialCardView uploadCard;
+    MaterialCardView uploadCard, myRecipesCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +24,21 @@ public class Dashboard extends AppCompatActivity {
 
         //hooks
         uploadCard = findViewById(R.id.cardOne);
+        myRecipesCard = findViewById(R.id.cardTwo);
+
+        //navigation
         uploadCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), UploadRecipe.class);
+                startActivity(intent);
+            }
+        });
+
+        myRecipesCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MyRecipes.class);
                 startActivity(intent);
             }
         });
