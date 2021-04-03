@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Dashboard extends AppCompatActivity {
 
     //vars
-    MaterialCardView uploadCard, myRecipesCard, nearbySpotsCard, recifyRecipesCard;
+    MaterialCardView uploadCard, myRecipesCard, nearbySpotsCard, recifyRecipesCard, liveFoodCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class Dashboard extends AppCompatActivity {
         myRecipesCard = findViewById(R.id.cardTwo);
         nearbySpotsCard = findViewById(R.id.cardThree);
         recifyRecipesCard = findViewById(R.id.cardFour);
+        liveFoodCard = findViewById(R.id.cardFive);
 
         //navigation
         uploadCard.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,14 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RecifyRecipes.class);
+                startActivity(intent);
+            }
+        });
+
+        liveFoodCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), LiveFood.class);
                 startActivity(intent);
             }
         });
