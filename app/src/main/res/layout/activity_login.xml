@@ -108,16 +108,17 @@
             app:backgroundTint="#35455D"></Button>
 
         <Button
+            android:id="@+id/googleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/custom_button"
             android:fontFamily="sans-serif-medium"
             android:text="GOOGLE SIGN-IN"
             android:textColor="@color/white"
-            app:backgroundTint="#35455D"
-            android:layout_marginTop="10dp"></Button>
+            app:backgroundTint="#35455D"></Button>
 
         <Button
             android:id="@+id/registerButton"
