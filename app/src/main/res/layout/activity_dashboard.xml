@@ -249,7 +249,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Live Food"
+                    android:text="Shopping List"
                     android:fontFamily="@font/dancing_script"
                     android:textSize="28sp"
                     android:layout_below="@+id/icon5"
