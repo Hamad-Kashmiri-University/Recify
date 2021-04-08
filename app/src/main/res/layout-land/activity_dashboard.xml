@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,7 +19,7 @@
 
         <ImageView
             android:id="@+id/profileImage"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
@@ -32,7 +35,7 @@
             android:fontFamily="@font/dancing_script_bold"
             android:text="Hamad Kashmiri"
             android:textColor="#fff"
-            android:textSize="36dp"></TextView>
+            android:textSize="36sp"></TextView>
 
         <TextView
             android:id="@+id/username"
@@ -45,7 +48,7 @@
             android:fontFamily="@font/dancing_script"
             android:text="Welcome to your Dashboard"
             android:textColor="#a9a9a9"
-            android:textSize="16dp"></TextView>
+            android:textSize="18sp"></TextView>
 
     </RelativeLayout>
 
@@ -80,9 +83,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload Food"
+                android:text="Upload Recipe"
                 android:fontFamily="@font/dancing_script"
-                android:textSize="28dp"
+                android:textSize="28sp"
                 android:layout_below="@+id/icon1"
                 android:id="@+id/card1"
                 android:layout_centerHorizontal="true"
@@ -119,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:text="My Recipes"
                 android:fontFamily="@font/dancing_script"
-                android:textSize="28dp"
+                android:textSize="28sp"
                 android:layout_below="@+id/icon2"
                 android:id="@+id/card2"
                 android:layout_centerHorizontal="true"
@@ -166,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:text="Nearby Spots"
                     android:fontFamily="@font/dancing_script"
-                    android:textSize="28dp"
+                    android:textSize="28sp"
                     android:layout_below="@+id/icon3"
                     android:id="@+id/card3"
                     android:layout_centerHorizontal="true"
@@ -203,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:text="Recify Recipes"
                     android:fontFamily="@font/dancing_script"
-                    android:textSize="28dp"
+                    android:textSize="28sp"
                     android:layout_below="@+id/icon4"
                     android:id="@+id/card4"
                     android:layout_centerHorizontal="true"
@@ -249,9 +252,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Voice Search"
+                    android:text="Shopping List"
                     android:fontFamily="@font/dancing_script"
-                    android:textSize="28dp"
+                    android:textSize="28sp"
                     android:layout_below="@+id/icon5"
                     android:id="@+id/card5"
                     android:layout_centerHorizontal="true"
@@ -287,7 +290,7 @@
                     android:layout_height="wrap_content"
                     android:text="Settings"
                     android:fontFamily="@font/dancing_script"
-                    android:textSize="28dp"
+                    android:textSize="28sp"
                     android:layout_alignParentBottom="true"
                     android:id="@+id/card6"
                     android:layout_centerHorizontal="true"
@@ -316,3 +319,4 @@
         android:textColor="#35455d"></Button>
 
 </LinearLayout>
+</ScrollView>
