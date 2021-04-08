@@ -38,13 +38,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.7.0'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
-    implementation("com.gorisse.thomas.sceneform:sceneform:1.18.7")
-    implementation 'com.github.ThomasGorisse.sceneform-android-sdk:sceneform:-SNAPSHOT'
     implementation "androidx.fragment:fragment-ktx:1.2.0-rc01"
     implementation 'com.google.ar:core:1.23.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    api project(":sceneformux")
 
 }
