@@ -7,6 +7,7 @@ import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -139,6 +140,7 @@ public class Register extends AppCompatActivity {
             String password = formPassword.getEditText().getText().toString();
 
             UserHelper User = new UserHelper(name, username, email, password);
+        Toast.makeText(Register.this, "congrats a user has been added", Toast.LENGTH_LONG).show();
 
             //unique identifier for new users
             ref.child(name).setValue(User);
