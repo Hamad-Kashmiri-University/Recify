@@ -10,5 +10,10 @@ public class LiveFood extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_live_food);
+
+        // Enable AR-related functionality on ARCore supported devices only.
+
     }
+
+
 }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidUnresolvableTag -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +11,21 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="live Food"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="375dp" />
+        android:text="TextView"
+        tools:layout_editor_absoluteX="248dp"
+        tools:layout_editor_absoluteY="394dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="220dp">
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/arFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
