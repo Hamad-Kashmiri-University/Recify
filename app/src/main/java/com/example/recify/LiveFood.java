@@ -1,12 +1,14 @@
 package com.example.recify;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -52,6 +54,12 @@ public class LiveFood extends AppCompatActivity {
             speechText.setText(results.get(0).toString());
         }
         super.onActivityResult(requestCode, resultCode, data);
+        recipeSearch();
+    }
+
+    private void recipeSearch() {
+        Toast.makeText(LiveFood.this, speechText.getText(), Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q=" + speechText.getText() + "+recipes")));
     }
 }
 
