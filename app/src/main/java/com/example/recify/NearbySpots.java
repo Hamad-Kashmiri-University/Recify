@@ -6,7 +6,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -14,18 +16,20 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-public class NearbySpots extends AppCompatActivity {
+public class NearbySpots extends AppCompatActivity implements OnMapReadyCallback {
 
-    private static final int RC_SIGN_IN = 9001;
-
-    private GoogleSignInClient mSignInClient;
+    boolean permissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nearby_spots);
-
         permissionValidate();
+
+        if(permissions){
+            SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+            supportMapFragment.getMapAsync(this);
+        }
     }
 
     private void permissionValidate() {
@@ -34,6 +38,7 @@ public class NearbySpots extends AppCompatActivity {
             @Override
             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                 Toast.makeText(NearbySpots.this, "Permission granted", Toast.LENGTH_SHORT).show();
+                permissions = true;
             }
 
             @Override
@@ -48,5 +53,10 @@ public class NearbySpots extends AppCompatActivity {
         }).check();
     }
 
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+    }
 
 }
