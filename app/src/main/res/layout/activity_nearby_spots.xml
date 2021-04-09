@@ -30,8 +30,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="90dp"
-            android:backgroundTint="#00ffffff"
-            android:src="@drawable/restaurant" />
+            android:backgroundTint="#ffffff"
+            android:src="@drawable/restaurant"
+            android:onClick="onClick"/>
 
         <ImageButton
             android:id="@+id/groceryIcon"
@@ -40,8 +41,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="205dp"
-            android:backgroundTint="#00ffffff"
-            android:src="@drawable/grocery" />
+            android:backgroundTint="#ffffff"
+            android:src="@drawable/grocery"
+            android:onClick="onClick"/>
 
     </RelativeLayout>
 
