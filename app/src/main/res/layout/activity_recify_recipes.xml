@@ -6,11 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".RecifyRecipes">
 
-    <TextView
-        android:id="@+id/textView3"
+    <Button
+        android:id="@+id/bt_take_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="recify recipes"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="373dp" />
+        android:layout_marginBottom="84dp"
+        android:text="take_picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_capture"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ListView
+        android:id="@+id/lv_probabilities"
+        android:layout_width="395dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="165dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="214dp"
+        app:layout_constraintBottom_toTopOf="@+id/lv_probabilities"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        mlModelBinding true
+    }
 }
 
 dependencies {
@@ -39,15 +42,25 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.android.gms:play-services-auth:18.0.0'
     implementation "androidx.fragment:fragment-ktx:1.2.0-rc01"
-    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.0.0'
-    implementation 'com.google.ar:core:1.23.0'
+
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.karumi:dexter:6.2.2'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-gpu:2.2.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation('org.tensorflow:tensorflow-lite:0.0.0-nightly') { changing = true }
+    implementation('org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly') { changing = true }
+    implementation('org.tensorflow:tensorflow-lite-support:0.0.0-nightly') { changing = true }
 
+}
+android {
+    aaptOptions {
+        noCompress "tflite"
+    }
 }
 //apply plugin: 'com.google.ar.sceneform.plugin'
 //sceneform.asset('sampledata/model.obj',
