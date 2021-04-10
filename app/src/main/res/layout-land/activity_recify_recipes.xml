@@ -15,49 +15,42 @@
         android:fontFamily="sans-serif-medium"
         android:text="Take a photo"
         app:backgroundTint="#35455D"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lv_probabilities"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="451dp"
+        tools:layout_editor_absoluteY="29dp" />
 
     <ImageView
         android:id="@+id/iv_capture"
-        android:layout_width="300dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="163dp"
+        android:layout_height="211dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="108dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ListView
         android:id="@+id/lv_probabilities"
-        android:layout_width="295dp"
-        android:layout_height="314dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        android:layout_width="254dp"
+        android:layout_height="252dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_capture"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="7dp"
         android:fontFamily="@font/dancing_script_bold"
         android:text="Dont know the name of the food?"
         android:textAlignment="center"
         android:textColor="#35455D"
         android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_take_picture" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

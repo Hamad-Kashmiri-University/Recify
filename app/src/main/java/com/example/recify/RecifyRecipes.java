@@ -1,3 +1,4 @@
+// code adapted from A Anand at "https://blog.notyouraveragedev.in/android/image-classification-in-android-using-tensor-flow/"
 package com.example.recify;
 
 import android.Manifest;
