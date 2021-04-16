@@ -14,8 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="250dp"
-        app:cardBackgroundColor="@color/white"
-        android:clickable="true">
+        app:cardBackgroundColor="@color/white">
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -27,7 +26,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_action_camera"/>
+                android:src="@drawable/ic_action_camera"
+                android:clickable="true"/>
         </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
@@ -87,6 +87,7 @@
         android:gravity="start"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/doneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
