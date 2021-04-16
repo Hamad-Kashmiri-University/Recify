@@ -25,52 +25,28 @@ import java.util.List;
 import java.util.Map;
 
 public class Classifier {
-    /**
-     * Quantized MobileNet models requires additional dequantization to the output probability.
-     */
+
     private static final float PROBABILITY_MEAN = 0.0f;
     private static final float PROBABILITY_STD = 255.0f;
-    /**
-     * The quantized model does not require normalization, thus set mean as 0.0f, and std as 1.0f to
-     * bypass the normalization.
-     */
+
     private static final float IMAGE_STD = 1.0f;
     private static final float IMAGE_MEAN = 0.0f;
     private static final int MAX_SIZE = 5;
-    /**
-     * Image size along the x axis.
-     */
+
     private final int imageResizeX;
-    /**
-     * Image size along the y axis.
-     */
+
     private final int imageResizeY;
-    /**
-     * Labels corresponding to the output of the vision model.
-     */
+
     private final List<String> labels;
-    /**
-     * An instance of the driver class to run model inference with Tensorflow Lite.
-     */
+
     private final Interpreter tensorClassifier;
-    /**
-     * Input image TensorBuffer.
-     */
+
     private TensorImage inputImageBuffer;
-    /**
-     * Output probability TensorBuffer.
-     */
+
     private final TensorBuffer probabilityImageBuffer;
-    /**
-     * Processer to apply post processing of the output probability.
-     */
+
     private final TensorProcessor probabilityProcessor;
-    /**
-     * Creates a classifier
-     *
-     * @param activity the current activity
-     * @throws IOException
-     */
+
     public Classifier(Activity activity) throws IOException {
         /*
          * The loaded TensorFlow Lite model.
@@ -98,13 +74,7 @@ public class Classifier {
         probabilityProcessor = new TensorProcessor.Builder().add(new NormalizeOp(PROBABILITY_MEAN, PROBABILITY_STD))
                 .build();
     }
-    /**
-     * method runs the inference and returns the classification results
-     *
-     * @param bitmap            the bitmap of the image
-     * @param sensorOrientation orientation of the camera
-     * @return classification results
-     */
+
     public List<Recognition> recognizeImage(final Bitmap bitmap, final int sensorOrientation) {
         List<Recognition> recognitions = new ArrayList<>();
         inputImageBuffer = loadImage(bitmap, sensorOrientation);
@@ -120,13 +90,7 @@ public class Classifier {
         // returning top 5 predicitons
         return recognitions.subList(0, MAX_SIZE);
     }
-    /**
-     * loads the image into tensor input buffer and apply pre processing steps
-     *
-     * @param bitmap            the bit map to be loaded
-     * @param sensorOrientation the sensor orientation
-     * @return the image loaded tensor input buffer
-     */
+
     private TensorImage loadImage(Bitmap bitmap, int sensorOrientation) {
         // Loads bitmap into a TensorImage.
         inputImageBuffer.load(bitmap);
@@ -142,17 +106,11 @@ public class Classifier {
                 .build();
         return imageProcessor.process(inputImageBuffer);
     }
-    /**
-     * An immutable result returned by a Classifier describing what was recognized.
-     */
+
     public class Recognition implements Comparable {
-        /**
-         * Display name for the recognition.
-         */
+
         private String name;
-        /**
-         * A sortable score for how good the recognition is relative to others. Higher should be better.
-         */
+
         private float confidence;
 
         public Recognition(String name, float confidence) {
