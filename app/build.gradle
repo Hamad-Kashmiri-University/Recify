@@ -57,6 +57,10 @@ dependencies {
     implementation('org.tensorflow:tensorflow-lite-gpu:0.0.0-nightly') { changing = true }
     implementation('org.tensorflow:tensorflow-lite-support:0.0.0-nightly') { changing = true }
 
+    //image cropping dependency
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+
 }
 android {
     aaptOptions {
