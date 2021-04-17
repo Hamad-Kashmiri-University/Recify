@@ -145,4 +145,18 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         return count;
     }
+
+    //delete by id
+    public void deleteByID(String id){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(DatabaseConstants.TABLE_NAME, DatabaseConstants.C_ID + " = ?", new String[]{id});
+        db.close();
+    }
+
+    //delete all
+    public void deleteAll(){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM "+ DatabaseConstants.TABLE_NAME);
+        db.close();
+    }
 }

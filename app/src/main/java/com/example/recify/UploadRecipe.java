@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -102,6 +103,12 @@ public class UploadRecipe extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.deleteAllIcon){
+            dbHelper.deleteAll();
+            Toast.makeText(this, "All Recipes have been deleted", Toast.LENGTH_LONG).show();
+            onResume();
+        }
 
         return super.onOptionsItemSelected(item);
     }

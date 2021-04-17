@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,9 +25,13 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.Holder> {
     private Context context;
     private ArrayList<ModelData> dataList;
 
+    private DBHelper dbHelper;
+
+
     public ModelAdapter(Context context, ArrayList<ModelData> dataList) {
         this.context = context;
         this.dataList = dataList;
+        dbHelper = new DBHelper(context);
     }
 
     @NonNull
@@ -52,6 +57,7 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.Holder> {
 
         holder.recipeName.setText(name);
         holder.recipeTime.setText(time + " Minutes");
+
 
 
         if(image.equals("null")){
@@ -111,7 +117,10 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.Holder> {
                 }
                 else if (i==1){
                     //if delete
-
+                    dbHelper.deleteByID(id);
+                    Toast.makeText(context, "Recipe has been deleted", Toast.LENGTH_LONG).show();
+                    //refreshes
+                    ((UploadRecipe)context).onResume();
                 }
             }
         });
