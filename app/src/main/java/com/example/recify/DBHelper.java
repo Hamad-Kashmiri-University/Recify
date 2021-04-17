@@ -32,7 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + DatabaseConstants.TABLE_NAME);
         onCreate(db);
     }
-
+    //add row
     public long addRecord(String name, String image, String time, String instructions, String ingredients, String added, String updated) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -55,6 +55,29 @@ public class DBHelper extends SQLiteOpenHelper {
         //id returned
         return id;
     }
+
+    //update row
+    public void updateRecord(String id, String name, String image, String time, String instructions, String ingredients, String added, String updated) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        //add data
+        values.put(DatabaseConstants.C_NAME, name);
+        values.put(DatabaseConstants.C_IMAGE, image);
+        values.put(DatabaseConstants.C_TIME, time);
+        values.put(DatabaseConstants.C_INSTRUCTIONS, instructions);
+        values.put(DatabaseConstants.C_INGREDIENTS, ingredients);
+        values.put(DatabaseConstants.C_ADDED, added);
+        values.put(DatabaseConstants.C_UPDATED, updated);
+
+        // add row (returns id of saved)
+        db.update(DatabaseConstants.TABLE_NAME, values, DatabaseConstants.C_ID + " = ?", new String[]{id});
+
+        //connection end
+        db.close();
+
+    }
+
 
     //data list
     public ArrayList<ModelData> getData(String orderBy){

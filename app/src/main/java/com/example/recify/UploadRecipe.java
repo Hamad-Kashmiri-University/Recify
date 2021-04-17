@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import androidx.appcompat.widget.SearchView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -47,9 +47,10 @@ public class UploadRecipe extends AppCompatActivity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // go to activity for adding a record to swlite
-                startActivity(new Intent(UploadRecipe.this, AddUpdateRecipe.class));
-
+                // go to activity for adding a record to sqlite
+                Intent intent = new Intent(UploadRecipe.this, AddUpdateRecipe.class);
+                intent.putExtra("EditMode", false);//false for new item true for edit
+                startActivity(intent);
             }
         });
     }

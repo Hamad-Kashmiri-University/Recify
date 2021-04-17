@@ -43,7 +43,8 @@ public class AddUpdateRecipe extends AppCompatActivity {
     private String[] storagePerms; //exclusively storage
 
     Uri imageUri;
-    private String name, time, ingredients, instructions;
+    private String id, name, time, ingredients, instructions, addedTime, updatedTime;
+    private boolean EditMode = false;
 
     //get database helper class
     private DBHelper dbHelper;
@@ -69,6 +70,43 @@ public class AddUpdateRecipe extends AppCompatActivity {
         recipeInstructions = findViewById(R.id.recipeInstructions);
         recipeIngredients = findViewById(R.id.recipeIngredients);
         doneButton = findViewById(R.id.doneButton);
+
+        //retrieve data from intent for editing
+        Intent intent = getIntent();
+        EditMode = intent.getBooleanExtra("EditMode", false);
+
+
+        //setting data
+        if (EditMode){
+            actionBar.setTitle("Update Recipe");
+            id = intent.getStringExtra("ID");
+            name = intent.getStringExtra("NAME");
+            imageUri = Uri.parse(intent.getStringExtra("IMAGE"));
+            time = intent.getStringExtra("TIME");
+            instructions = intent.getStringExtra("INSTRUCTIONS");
+            ingredients = intent.getStringExtra("INGREDIENTS");
+            addedTime = intent.getStringExtra("TIME_ADDED");
+            updatedTime = intent.getStringExtra("TIME_UPDATED");
+
+            recipeName.setText(name);
+            recipeTime.setText(time);
+            recipeInstructions.setText(instructions);
+            recipeIngredients.setText(ingredients);
+
+            //check null image
+            if (imageUri.toString().equals("null")){
+                foodImage.setImageResource(R.drawable.person);
+            }
+            else {
+                foodImage.setImageURI(imageUri);
+
+            }
+
+        }
+        else {
+            actionBar.setTitle("Add Recipe");
+
+        }
 
         //initialisations
         camPerms = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -100,18 +138,41 @@ public class AddUpdateRecipe extends AppCompatActivity {
         ingredients = ""+recipeIngredients.getText().toString().trim();
         instructions = ""+recipeInstructions.getText().toString().trim();
 
-        //save to sqlite
-        String stamp = ""+System.currentTimeMillis();
-        long id = dbHelper.addRecord(
-                ""+name,
-                ""+imageUri,
-                ""+time,
-                ""+instructions,
-                ""+ingredients,
-                ""+stamp,
-                ""+stamp
-        );
-        Toast.makeText(this, "Recipe has been added with ID: "+id, Toast.LENGTH_LONG).show();
+        //check mode edit or not
+        if (EditMode){
+
+            //save to sqlite
+            String stamp = ""+System.currentTimeMillis();
+            dbHelper.updateRecord(
+                    ""+id,
+                    ""+name,
+                    ""+imageUri,
+                    ""+time,
+                    ""+instructions,
+                    ""+ingredients,
+                    ""+addedTime,
+                    ""+stamp
+            );
+            Toast.makeText(this, "Recipe has been Updated: "+id, Toast.LENGTH_LONG).show();
+
+        }
+        else {
+
+            //save to sqlite
+            String stamp = ""+System.currentTimeMillis();
+            long id = dbHelper.addRecord(
+                    ""+name,
+                    ""+imageUri,
+                    ""+time,
+                    ""+instructions,
+                    ""+ingredients,
+                    ""+stamp,
+                    ""+stamp
+            );
+            Toast.makeText(this, "Recipe has been added with ID: "+id, Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     private void imagePick() {

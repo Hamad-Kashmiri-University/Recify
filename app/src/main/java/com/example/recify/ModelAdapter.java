@@ -1,8 +1,11 @@
 package com.example.recify;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,11 +78,46 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.Holder> {
         holder.detailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                moreDetails(""+position,""+id,""+name,""+image,""+time,""+ingredients,""+instructions,""+addedTime,""+updatedTime);
 
             }
         });
 
     }
+
+    private void moreDetails(String position, String id, String name, String image, String time, String ingredients, String instructions, String addedTime, String updatedTime) {
+        //options for details
+        String[] options = {"Edit", "Delete"};
+        //alert
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if (i==0) {
+                    //if edit
+                    Log.d("onclickdoalog","success");
+                    Intent intent = new Intent(context, AddUpdateRecipe.class);
+                    intent.putExtra("ID",id);
+                    intent.putExtra("NAME", name);
+                    intent.putExtra("IMAGE", image);
+                    intent.putExtra("TIME", time);
+                    intent.putExtra("INSTRUCTIONS", instructions);
+                    intent.putExtra("INGREDIENTS", ingredients);
+                    intent.putExtra("TIME_ADDED", addedTime);
+                    intent.putExtra("TIME_UPDATED", updatedTime);
+                    intent.putExtra("EditMode", true);
+                    context.startActivity(intent);
+
+                }
+                else if (i==1){
+                    //if delete
+
+                }
+            }
+        });
+        builder.create().show();
+    }
+
 
     @Override
     public int getItemCount() {
