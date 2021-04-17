@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Dashboard"
+    android:orientation="vertical"
+    android:layout_marginTop="-20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#35455d"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/profile"></ImageView>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/profileImage"
+            android:fontFamily="@font/dancing_script_bold"
+            android:text="Hamad Kashmiri"
+            android:textColor="#fff"
+            android:textSize="36dp"></TextView>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/profileImage"
+            android:fontFamily="@font/dancing_script"
+            android:text="Welcome to your Dashboard"
+            android:textColor="#a9a9a9"
+            android:textSize="16dp"></TextView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="-140dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="#fff"
+        android:id="@+id/cardOne">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/upload"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload Food"
+                android:fontFamily="@font/dancing_script"
+                android:textSize="28dp"
+                android:layout_below="@+id/icon1"
+                android:id="@+id/card1"
+                android:layout_centerHorizontal="true"
+                android:textColor="#35455d"
+                android:layout_marginTop="-10dp"></TextView>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTwo"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="#fff">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/recipe"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Recipes"
+                android:fontFamily="@font/dancing_script"
+                android:textSize="28dp"
+                android:layout_below="@+id/icon2"
+                android:id="@+id/card2"
+                android:layout_centerHorizontal="true"
+                android:textColor="#35455d"
+                android:layout_marginTop="-10dp"></TextView>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="-30dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardThree"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#fff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icon3"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/location"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nearby Spots"
+                    android:fontFamily="@font/dancing_script"
+                    android:textSize="28dp"
+                    android:layout_below="@+id/icon3"
+                    android:id="@+id/card3"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#35455d"
+                    android:layout_marginTop="-10dp"></TextView>
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFour"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#fff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icon4"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/fridge"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Food Guesser"
+                    android:fontFamily="@font/dancing_script"
+                    android:textSize="28dp"
+                    android:layout_below="@+id/icon4"
+                    android:id="@+id/card4"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="center"
+                    android:layout_marginTop="-10dp"
+                    android:textColor="#35455d"></TextView>
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginTop="-30dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFive"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#fff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icon5"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Voice Search"
+                    android:fontFamily="@font/dancing_script"
+                    android:textSize="28dp"
+                    android:layout_below="@+id/icon5"
+                    android:id="@+id/card5"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#35455d"></TextView>
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSix"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="#fff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/icon6"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/settings"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="25dp"></ImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:fontFamily="@font/dancing_script"
+                    android:textSize="28dp"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/card6"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#35455d"
+                    android:layout_marginBottom="20dp"
+                    ></TextView>
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="5dp"
+        android:background="#00000000"
+        android:fontFamily="sans-serif-black"
+        android:onClick="logout"
+        android:text="Logout"
+        android:textColor="#35455d"></Button>
+
+</LinearLayout>
