@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddUpdateRecipe">
+
+<!--  image container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/foodImageCard"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="250dp"
+        app:cardBackgroundColor="@color/white">
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="250dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/foodImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_action_camera"
+                android:clickable="true"/>
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+<!-- Recipe Name-->
+<EditText
+    android:id="@+id/recipeName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/foodImageCard"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="15dp"
+    android:inputType="textPersonName|textCapWords"
+    android:hint="Recipe Name"
+    android:fontFamily="serif"/>
+
+<!-- Recipe Time to cook-->
+    <EditText
+        android:id="@+id/recipeTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recipeName"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp"
+        android:inputType="number"
+        android:hint="Time to Cook (minutes)"
+        android:fontFamily="serif"/>
+
+<!-- Recipe Instructions-->
+    <EditText
+        android:id="@+id/recipeInstructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recipeTime"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp"
+        android:inputType="textMultiLine"
+        android:hint="Recipe Instructions"
+        android:minHeight="120dp"
+        android:gravity="start"
+        android:fontFamily="serif"/>
+<!-- Recipe Ingredients-->
+    <EditText
+        android:id="@+id/recipeIngredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recipeInstructions"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp"
+        android:inputType="textMultiLine"
+        android:hint="Ingredients"
+        android:fontFamily="serif"
+        android:minHeight="120dp"
+        android:gravity="start"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="#35455d"
+        android:src="@drawable/ic_action_done"/>
+</RelativeLayout>
+</ScrollView>
