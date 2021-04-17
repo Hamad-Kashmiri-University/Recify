@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecipeDetail">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <!--        circle image-->
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="250dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/foodImage"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/person" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--        text data using table-->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="2"
+            android:layout_marginTop="10dp">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/recipeTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_span="3"
+                    android:layout_weight="1"
+                    android:fontFamily="serif"
+                    android:gravity="top"
+                    android:text="Minutes to Cook"
+                    android:textAlignment="center"
+                    tools:ignore="RtlCompat"
+                    android:padding="10dp"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Name:" />
+
+                <TextView
+                    android:id="@+id/recipeName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Recipe Name"
+                    android:layout_weight="1"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Ingredients:"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/recipeIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Recipe Ingredients"
+                    android:layout_weight="1"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Instructions:"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/recipeInstructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Recipe Instructions"
+                    android:layout_weight="1"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Date Added:"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/recipeDateAdded"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Recipe Date Added"
+                    android:layout_weight="1"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Date Updated:"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/recipeDateUpdated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Recipe Date Updated"
+                    android:layout_weight="1"
+                    android:padding="5dp"/>
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -2,10 +2,13 @@ package com.example.recify;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
 
 //helper class which defined create read update and delte methods
 public class DBHelper extends SQLiteOpenHelper {
@@ -51,8 +54,72 @@ public class DBHelper extends SQLiteOpenHelper {
 
         //id returned
         return id;
-
     }
 
+    //data list
+    public ArrayList<ModelData> getData(String orderBy){
+        ArrayList<ModelData> dataList = new ArrayList<>();
 
+        String query = "SELECT * FROM " + DatabaseConstants.TABLE_NAME;
+       //String query = "SELECT * FROM " + DatabaseConstants.TABLE_NAME + " ORDER_BY " + orderBy;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        //loop to append data returned to list
+        if (cursor.moveToFirst()) {
+            do {
+                ModelData modelData = new ModelData(
+                        ""+cursor.getInt(cursor.getColumnIndex(DatabaseConstants.C_ID)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_NAME)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_IMAGE)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_TIME)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_INSTRUCTIONS)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_INGREDIENTS)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_ADDED)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_UPDATED)));
+
+                dataList.add(modelData);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return dataList;
+    }
+
+    //data search
+    public ArrayList<ModelData> searchData(String query){
+        ArrayList<ModelData> dataList = new ArrayList<>();
+
+        String searchQuery = "SELECT * FROM " + DatabaseConstants.TABLE_NAME + " WHERE " + DatabaseConstants.C_NAME + " LIKE '%" + query + "%'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(searchQuery, null);
+
+        //loop to append data returned to list
+        if (cursor.moveToFirst()) {
+            do {
+                ModelData modelData = new ModelData(
+                        ""+cursor.getInt(cursor.getColumnIndex(DatabaseConstants.C_ID)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_NAME)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_IMAGE)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_TIME)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_INSTRUCTIONS)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_INGREDIENTS)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_ADDED)),
+                        ""+cursor.getString(cursor.getColumnIndex(DatabaseConstants.C_UPDATED)));
+
+                dataList.add(modelData);
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return dataList;
+    }
+
+    public int getDataCount(){
+        String query = "SELECT * FROM " + DatabaseConstants.TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MyRecipes"
     app:cardElevation="3dp"
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -32,9 +32,9 @@
                 android:layout_gravity="center">
 
                 <ImageView
-                    android:id="@+id/foodImage"
-                    android:layout_width="60dp"
-                    android:layout_height="59dp"
+                    android:id="@+id/foodCardImage"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/person"
                     android:layout_gravity="center"/>
             </androidx.cardview.widget.CardView>
@@ -51,20 +51,20 @@
             android:layout_marginLeft="5dp">
 <!--            recipe name-->
             <TextView
-                android:id="@+id/recipeName"
+                android:id="@+id/recipeCardName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Recipe"
                 android:textColor="@color/black"
                 android:fontFamily="serif"/>
 
-            <TextView
-                android:id="@+id/recipeTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Time"
-                android:textColor="@color/black"
-                android:fontFamily="serif"/>
+                <TextView
+                    android:id="@+id/recipeCardTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:textColor="@color/black"
+                    android:fontFamily="serif"/>
 
         </LinearLayout>
 
@@ -81,4 +81,4 @@
 
 
 
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>

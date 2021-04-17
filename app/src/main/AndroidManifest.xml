@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Recify">
-        <activity android:name=".AddUpdateRecipe"></activity>
+        <activity android:name=".RecipeDetail"></activity>
+        <activity android:name=".AddUpdateRecipe" />
         <activity android:name=".Settings" />
         <activity android:name=".LiveFood" />
         <activity android:name=".RecifyRecipes" />
