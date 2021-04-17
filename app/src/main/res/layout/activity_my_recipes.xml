@@ -20,8 +20,8 @@
 <!--        circle image-->
         <androidx.cardview.widget.CardView
             android:id="@+id/foodImageCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             app:cardCornerRadius="250dp"
             app:cardBackgroundColor="@color/white"
             android:layout_margin="2dp">
@@ -47,7 +47,8 @@
             android:layout_toEndOf="@+id/foodImageCard"
             android:layout_toRightOf="@+id/foodImageCard"
             android:layout_toStartOf="@id/detailsButton"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="5dp">
 <!--            recipe name-->
             <TextView
                 android:id="@+id/recipeName"

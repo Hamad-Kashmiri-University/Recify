@@ -7,14 +7,26 @@
     tools:context=".UploadRecipe">
 
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dataView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="120dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/activity_my_recipes"
+        android:clipToPadding="true"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_action_name"
-        android:backgroundTint="#35455D"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#35455D"
+        android:src="@drawable/ic_action_name" />
 
 </RelativeLayout>
