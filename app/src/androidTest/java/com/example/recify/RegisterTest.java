@@ -30,14 +30,6 @@ public class RegisterTest {
     }
 
     @Test
-    public void onCreate() {
-    }
-
-    @Test
-    public void register() {
-    }
-
-    @Test
     public void isActivityValid() {
         View view = mRegister.findViewById(R.id.logotext);
         View view2 = mRegister.findViewById(R.id.formSubmit);
@@ -45,4 +37,5 @@ public class RegisterTest {
         assertNotNull(view);
         assertNotNull(view2);
     }
+
 }

@@ -48,26 +48,10 @@ public class LoginTest {
         assertNotNull(mLogin.findViewById(R.id.registerButton));
         //onView(withId(R.id.registerButton)).perform(click());
         //if second activity created get those instruments
-        Activity registerActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 6000);
+        Activity registerActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 3000);
         assertNull(registerActivity);
        //registerActivity.finish();
 
     }
 
-    @Test
-    public void onStart() {
-    }
-
-    @Test
-    public void onCreate() {
-    }
-
-    @Test
-    public void onActivityResult() {
-
-    }
-
-    @Test
-    public void login() {
-    }
 }
