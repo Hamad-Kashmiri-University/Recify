@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
+
     //vars
     TextInputLayout formName, formUsername, formPassword, formEmail;
     Button formSubmit, formLogin;
