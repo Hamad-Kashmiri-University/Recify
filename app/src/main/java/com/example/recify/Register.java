@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
+
     //vars
     TextInputLayout formName, formUsername, formPassword, formEmail;
     Button formSubmit, formLogin;
@@ -62,7 +63,7 @@ public class Register extends AppCompatActivity {
     }
 
     //validate name
-    private boolean nameValidate() {
+    public boolean nameValidate() {
         String input = formName.getEditText().getText().toString();
 
         if (input.isEmpty()) {
@@ -76,7 +77,7 @@ public class Register extends AppCompatActivity {
         }
     };
 
-    private boolean usernameValidate() {
+    public boolean usernameValidate() {
         String input = formUsername.getEditText().getText().toString();
         if (input.isEmpty()) {
             formUsername.setError("Please enter a username");
@@ -93,7 +94,19 @@ public class Register extends AppCompatActivity {
         }
     };
 
-    private boolean emailValidate() {
+    public boolean usernameValidateTest(String input) {
+        if (input.isEmpty()) {
+            return false;
+        }
+        else if(input.length() >= 12) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+
+    public boolean emailValidate() {
         String input = formEmail.getEditText().getText().toString();
         String emailRegEx = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
@@ -111,7 +124,21 @@ public class Register extends AppCompatActivity {
         }
     };
 
-    private boolean passwordValidate() {
+    public boolean emailValidateTest(String input) {
+        String emailRegEx = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if (input.isEmpty()) {
+            return false;
+        }
+        else if (!input.matches(emailRegEx)){
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+
+    public boolean passwordValidate() {
         String input = formPassword.getEditText().getText().toString();
 
         if (input.isEmpty()) {
@@ -123,6 +150,17 @@ public class Register extends AppCompatActivity {
             return true;
         }
     };
+
+    public boolean passwordValidateTest(String input) {
+
+        if (input.isEmpty()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+
 
 
     public void register (View v){
@@ -145,7 +183,5 @@ public class Register extends AppCompatActivity {
             //unique identifier for new users
             ref.child(name).setValue(User);
         }
-
-
 
 }

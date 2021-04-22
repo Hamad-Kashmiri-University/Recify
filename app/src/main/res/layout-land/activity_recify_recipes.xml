@@ -9,14 +9,19 @@
 
     <Button
         android:id="@+id/bt_take_picture"
-        android:layout_width="255dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="216dp"
         android:background="@drawable/custom_button"
         android:fontFamily="sans-serif-medium"
         android:text="Take a photo"
         app:backgroundTint="#35455D"
-        tools:layout_editor_absoluteX="451dp"
-        tools:layout_editor_absoluteY="29dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lv_probabilities"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iv_capture"
@@ -30,10 +35,12 @@
 
     <ListView
         android:id="@+id/lv_probabilities"
-        android:layout_width="254dp"
+        android:layout_width="0dp"
         android:layout_height="252dp"
         android:layout_marginStart="128dp"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="69dp"
+        app:layout_constraintEnd_toStartOf="@+id/bt_take_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,7 +57,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_take_picture" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,8 +49,6 @@ public class RecifyRecipes extends AppCompatActivity {
     private Button takepicture;
     private Uri imageUri;
 
-
-
     /**
      * Method to initalize UI Elements. this method adds the on click
      */
