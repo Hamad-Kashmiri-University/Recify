@@ -53,7 +53,7 @@
         android:text="Dont know the name of the food?"
         android:textAlignment="center"
         android:textColor="#35455D"
-        android:textSize="40sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
